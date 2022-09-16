@@ -1,0 +1,31 @@
+<template>
+    <lightning-card  title="Two way Data Binding">
+            <div class="slds-var-m-around_x-small">
+                <lightning-input type="text" label="Enter course Name" onkeydown={changeHandler}></lightning-input>
+                <div>{fullname} is a cource of {title}</div>
+            </div>
+            </lightning-card>
+
+            <lightning-card  title="Track Properties">
+                <div class="slds-var-m-around_x-small">
+                    <lightning-input type="text" label="Enter city Name" onkeydown={trackHandler}></lightning-input>
+            <div>{address.city} is my city</div>
+                </div>
+                </lightning-card>
+
+                <lightning-card  title="slds Design">
+                    <div class="slds-var-p-horizontal_small">
+                        <div class="slds-box slds-box_small">
+                            <span class="slds-badge">Badge Label</span>
+                            <span class="slds-badge slds-theme_success">success Label</span>
+                            <p>This is a small box.</p>
+                            </div>
+                    </div>
+                    </lightning-card>
+
+                    <lightning-card  title="slds Design brand band">
+                        <div class="slds-brand-band slds-brand-band_medium slds-brand-band_group"></div>
+                        </lightning-card>
+
+                
+  </template>

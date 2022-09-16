@@ -1,0 +1,44 @@
+<template>
+    <lightning-card title="Apartment List">
+        <div class="slds-var-p-around_medium">
+            <lightning-combobox
+                name="City"
+                lable="Choose City"
+                value={selectedcity}
+                options={cityoptions}
+                onchange={cityhandler}>
+            </lightning-combobox>
+            <template if:true={noCitySelected}>
+                <template if:true={products2}>
+                    <div class="content">
+                        <template for:each={products2} for:item="product">
+                            <c-apartment-list-child key={product.Id} product={product}></c-apartment-list-child>
+                        </template>
+                    </div>
+                </template>
+            </template>
+            
+            <template if:true={filteredproducts.data}>
+                <template for:each={filteredproducts.data} for:item="apartment">
+                    <div class="slds-box slds-box_xx-small" key={apartment.Id}>
+                        <p><strong>Name :  </strong> {apartment.Name}
+                        </p>
+                        <p><strong>Expected Rent :  </strong> {apartment.Expected_Rent__c}
+                        </p>
+                        <p><strong>City :  </strong> {apartment.City__c}
+                        </p>
+                        <p><strong>No of Bedrooms : </strong> {apartment.No_of_Bedrooms__c}
+                        </p>
+                        <p><strong>No of Baths : </strong> {apartment.No_of_Baths__c}
+                        </p>
+                        <p><strong>Image : </strong>
+                        </p>
+                          
+                         <img src={apartment.Picture_URL__c} class="slds-align_absolute-center productImage" />
+                        
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+    </template>

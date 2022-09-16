@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Filters" icon-name="standard:calibration">
+    <div class="slds-var-p-around_medium">
+    <section class="slider_section">
+        <lightning-slider lable="Max Price" step="500" min="1500" max="50000"
+        value={} onchange={handleMaxprice}></lightning-slider>
+    </section>
+    <section>
+        <h2>City</h2>
+        <template if:true={cities.data}>
+            <template for:each={cities.data.values} for:item="city">
+                <lightning-input key={city.value} label={city.label}
+                 type="checkbox" unchecked
+                 name="cities"
+                 value={city.value}
+            onchange={handlecheckbox}></lightning-input>
+            </template>
+            </template>
+        <template if:true={cities.error}>
+        <div>{cityError}</div>
+        </template>
+    </section>
+
+    </div>
+</lightning-card>
+</template>

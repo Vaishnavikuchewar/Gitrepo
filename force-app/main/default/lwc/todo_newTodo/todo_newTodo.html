@@ -1,0 +1,30 @@
+<template>
+
+    <!-- Dscription -->
+    
+     <div class="container">
+    
+        <div if:true={showSpinner}>
+    
+        <lightning-spinner></lightning-spinner>
+    
+        </div>
+    
+        <!-- sldsValidatorIgnoreNextLine -->
+    
+        <input placeholder="Add task.." value={discription} class="slds-input" onchange={handleInputChange}/>
+    
+        <div class="error" if:true={isInvalid}>*input is required</div>
+    
+    
+    
+    <!-- Add Button -->
+    
+    <div class="slds-p-left_medium">
+    
+     <lightning-button label="Add" variant="success" class="slds-button_success" onclick={handleAdd}></lightning-button>
+    
+     </div>
+       </div>
+    
+    </template>

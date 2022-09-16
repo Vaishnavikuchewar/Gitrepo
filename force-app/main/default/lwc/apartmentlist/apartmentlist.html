@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title=" Apartment List" icon-name="standard:account"> 
+    <div class="slds-var-p-around_medium">
+        <lightning-combobox
+        name="City"
+        lable="Choose City"
+        value={selectecity}
+        options={options}
+        onchange={handlecity}>
+    </lightning-combobox>
+        <template if:true={products2}>
+            <div class="content">
+                <template for:each={products2} for:item="product">
+                    <c-apartment-list-child key={product.Id} product={product}></c-apartment-list-child>
+                </template>
+            </div>
+        </template>
+    </div>
+</lightning-card>
+</template>

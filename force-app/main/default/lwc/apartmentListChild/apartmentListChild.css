@@ -1,0 +1,11 @@
+img.productImage{
+    height:140px;
+    max-width:initial;
+    pointer-events: none;
+    
+
+}
+.title{
+    font-weight: bold;
+    text-transform: uppercase;
+}
