@@ -7,6 +7,8 @@ public with sharing class ProductController{
 
 
     //ffffffffffffffffffffffffffffffffffffffffffffffff
+    //xgxyvyyu
+    //kkkkkkkk
     @AuraEnabled(cacheable=true)
     public static List<Product2> Filtercity(string city){
         return [SELECT Id,Name, City__c, Picture_URL__c, No_of_Bedrooms__c,No_of_Baths__c,Expected_Rent__c from Product2 where City__c=:city and Name LIKE 'A%' LIMIT 5];
